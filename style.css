@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* Force every TEXT element to use the pixel font */
-*, *::before, *::after, body, p, span, a, h1, h2, h3, div {
+/* 1. Target general layout blocks safely */
+body, p, span, a, h1, h2, h3, div, section, footer, nav {
     font-family: 'Press Start 2P', monospace !important;
 }
 
-/* EXCLUDE Font Awesome icons so they actually render properly */
-.fab, .fas, .far, .fa-brands, .fa-solid {
-    font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
-    font-weight: 400; /* Keeps brand icons solid */
+/* 2. PROTECT ALL ICONS - Stop them from getting overwritten */
+i, .fab, .fas, .far, [class^="fa-"], [class*=" fa-"] {
+    font-family: 'Font Awesome 6 Brands', 'Font Awesome 6 Free', 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome' !important;
+    font-weight: 400 !important;
 }
 
 html {
