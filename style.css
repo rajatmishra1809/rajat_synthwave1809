@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
     margin: 0;
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Press Start 2P', monospace; /* Set globally for everything */
     color: #fff;
     background: #000;
     overflow-x: hidden;
@@ -36,7 +36,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for better readability */
+    background: rgba(0, 0, 0, 0.6);
     z-index: -1;
 }
 
@@ -48,7 +48,6 @@ nav {
     justify-content: center;
     gap: 40px;
     padding: 30px;
-    font-family: 'Press Start 2P', monospace;
 }
 
 nav a {
@@ -89,7 +88,7 @@ nav a:hover {
 }
 
 /* ===========================
-   Hero
+   Hero Header
 =========================== */
 header {
     text-align: center;
@@ -98,18 +97,18 @@ header {
 }
 
 header h1 {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: white;
     text-shadow: 0 0 15px #ff00ff;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .subtitle {
     margin-top: 25px;
-    font-size: 1.1rem;
+    font-size: 0.8rem; /* Adjusted for pixel text width */
     color: #ddd;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
+    line-height: 1.5;
 }
 
 /* ===========================
@@ -122,7 +121,7 @@ main {
 }
 
 /* ===========================
-   Glass Boxes Style Fix
+   Glass Boxes
 =========================== */
 .intro-box,
 .tech-box,
@@ -140,27 +139,23 @@ main {
     width: 100%;
 }
 
-/* ===========================
-   Intro Box Font Update
-=========================== */
-.intro-box p {
-    font-family: 'Press Start 2P', monospace;
+/* Text inside intro or generic paragraphs inside boxes */
+.intro-box p, 
+.about-box p {
     text-align: center;
-    line-height: 2;         /* Increased spacing so pixel letters don't mash together */
-    font-size: 0.75rem;     /* Shrunk down slightly since 8-bit fonts are naturally bulky */
-    color: #fff;
-    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5); /* Subtle cyber glow */
+    line-height: 2;
+    font-size: 0.75rem; /* Keeps bulky text completely responsive */
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.4);
 }
 
-/* Section Headings */
+/* Section Titles */
 .tech-box h2,
 .projects-box h2 {
-    font-family: 'Press Start 2P', monospace;
     text-align: center;
     color: white;
     text-shadow: 0 0 10px #ff00ff;
     margin-bottom: 35px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 /* ===========================
@@ -168,7 +163,7 @@ main {
 =========================== */
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
 }
 
@@ -176,12 +171,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 55px;
     background: rgba(255, 0, 255, 0.08);
     border: 1px solid rgba(255, 0, 255, 0.5);
     border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.65rem; /* Shrunk tags so text doesn't burst out of boxes */
+    text-align: center;
+    padding: 5px;
     transition: 0.3s ease;
 }
 
@@ -217,17 +213,30 @@ main {
 }
 
 .project-card h3 {
-    font-family: 'Press Start 2P', monospace;
     color: #ff00ff;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
 .project-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.65rem;
+    line-height: 1.8;
     color: #ccc;
+}
+
+/* Links inside boxes (like the Instagram link in your screenshot) */
+.about-box a, 
+.intro-box a {
+    color: #ff00ff;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.about-box a:hover, 
+.intro-box a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #ff00ff;
 }
 
 /* ===========================
@@ -236,8 +245,8 @@ main {
 footer {
     text-align: center;
     padding: 30px 0;
-    color: #888;
-    font-size: 0.85rem;
+    color: #666;
+    font-size: 0.65rem;
     border-top: 1px solid rgba(255, 0, 255, 0.1);
     background: rgba(0, 0, 0, 0.8);
 }
@@ -250,21 +259,20 @@ footer {
 }
 ::-webkit-scrollbar-thumb {
     background: #ff00ff;
-    border-radius: 4px;
 }
 ::-webkit-scrollbar-track {
     background: #111;
 }
 
 /* ===========================
-   Responsive Design
+   Responsive Mobile Adjustments
 =========================== */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .subtitle {
-        font-size: 0.9rem;
+        font-size: 0.65rem;
     }
     nav {
         gap: 20px;
@@ -282,7 +290,7 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
-    .intro-box, .tech-box, .projects-box {
+    .intro-box, .tech-box, .projects-box, .about-box {
         padding: 25px;
         margin: 30px auto;
     }
