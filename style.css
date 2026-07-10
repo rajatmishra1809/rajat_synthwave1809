@@ -140,11 +140,16 @@ main {
     width: 100%;
 }
 
-/* Intro Text */
+/* ===========================
+   Intro Box Font Update
+=========================== */
 .intro-box p {
+    font-family: 'Press Start 2P', monospace;
     text-align: center;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    line-height: 2;         /* Increased spacing so pixel letters don't mash together */
+    font-size: 0.75rem;     /* Shrunk down slightly since 8-bit fonts are naturally bulky */
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5); /* Subtle cyber glow */
 }
 
 /* Section Headings */
