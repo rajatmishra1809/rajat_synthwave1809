@@ -131,18 +131,77 @@ main {
 .tech-box,
 .projects-box,
 .about-box,
+/* ===========================
+   Contact Form (Fixed Layout)
+=========================== */
 .contact-form {
-    background: rgba(15, 15, 25, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid #ff00ff;
-    border-radius: 16px;
-    box-shadow: 0 0 25px rgba(255, 0, 255, 0.25);
-    padding: 40px;
+    display: flex;
+    flex-direction: column; /* Forces inputs to stack vertically instead of squishing sideways */
+    align-items: center;
+    width: min(600px, 100%); /* Keeps the form from getting too wide/stretched out */
     margin: 50px auto;
+}
+
+.contact-form h2 {
+    font-family: 'Press Start 2P', monospace !important;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: white;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px; /* Clean gap between input slots */
+    border: 2px solid rgba(255, 0, 255, 0.5);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.65rem; /* Shrunk down so the pixel placeholders fit without overflowing */
+    line-height: 1.6;
+    transition: 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 12px rgba(255, 0, 255, 0.6);
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background: #ff00ff;
+    color: black;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.75rem; /* Balanced size for the action button */
+    cursor: pointer;
+    align-self: center; /* Centers the button perfectly at the bottom */
+    transition: 0.3s ease;
+    width: fit-content;
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #ff00ff;
+    background: white;
+}
 /* Text inside intro or generic paragraphs inside boxes */
 .intro-box p, 
 .about-box p {
